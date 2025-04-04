@@ -32,8 +32,7 @@ body {
 }
 
 /* HEADER */
- /* ===== HEADER & NAVIGATION ===== */
- header {
+header {
   display: flex; /* Use flexbox for layout */
   align-items: center; /* Align items vertically */
   justify-content: space-between; /* Space between the profile photo and nav */
@@ -42,31 +41,7 @@ body {
   padding: 1rem 2rem;
 }
 
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  z-index: -1; /* Place the overlay behind the header content */
-}
-
-header h1 {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  font-size: 2rem;
-  margin-right: 0; /* Remove extra margin */
-}
-
-.profile-photo {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%; /* Keep the circular shape */
-  object-fit: cover; /* Ensure the image fits within the circle */
-  border: none; /* Remove the border */
-}
-
+/* Navigation */
 nav ul {
   display: flex;
   gap: 2rem; /* Adjust spacing between nav items */
@@ -79,9 +54,63 @@ nav a {
   text-decoration: none;
   color: white; /* Change text color to white */
   font-weight: 500;
-  padding: 4rem 4;
+  padding: 1rem 1rem;
   position: relative;
   transition: color 0.3s ease;
+}
+
+/* Underline animation */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary); /* Changes text color on hover */
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: var(--primary); /* Same as hover color */
+}
+
+/* Optional: Keep the underline effect for the active link */
+nav a.active::after {
+  width: 100%; /* Fully underline the active link */
+}
+
+/* Responsive Header and Navigation */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+  
+  header h1 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    margin-bottom: 1rem; /* Add margin below the header title */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: flex-start; /* Align nav items to the start */
+    width: 100%; /* Full width for nav items */
+  }
+
+  nav a {
+    padding: 1rem 0; /* Adjust padding for nav links */
+    width: 100%; /* Full width for nav links */
+    text-align: left; /* Align text to the left */
+  }
 }
 
 /* Underline animation */
