@@ -203,39 +203,6 @@ nav a.active::after {
     border-right: none; /* Remove cursor on mobile */
   }
 }
-  /* Bounce and Fade-in Animation for Paragraph */
-  .bounce-fade-text {
-      font-family: Arial, sans-serif;
-      font-size: 0.5rem;
-      color: #fff;
-      opacity: 1; /* Fully visible by default */
-      transform: translateY(0); /* Default position */
-      transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
-      animation: fadeInBounce 3s ease-in-out forwards; /* Initial animation */
-      margin-bottom: 0px; /* Adjust margin as needed */
-  }
-
-  /* Trigger animations on hover */
-  .bounce-fade-text:hover {
-      animation: fadeInBounce 2s ease-in-out forwards;
-  }
-
-  /* Keyframes for Bounce and Fade-in Animation */
-  @keyframes fadeInBounce {
-      0% {
-          opacity: 0;
-          transform: translateY(20px); /* Start slightly below */
-      }
-      50% {
-          opacity: 0.5;
-          transform: translateY(-10px); /* Bounce upward */
-      }
-      100% {
-          opacity: 1;
-          transform: translateY(0); /* Settle in place */
-      }
-  }
-  /* Add this to create consistent spacing between all sections */
 main section {
   margin: 3rem 0;
 }
