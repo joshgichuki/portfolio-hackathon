@@ -161,6 +161,15 @@ nav a.active::after {
           opacity: 0;
       }
   }
+@media (max-width: 768px) {
+  .typewriter-glow {
+    animation: 
+      typing 2.5s steps(40, end) forwards,
+      blink 0.7s infinite;
+    width: 100%;
+    border-right: none; /* Remove cursor on mobile */
+  }
+}
 
   /* Bounce and Fade-in Animation for Paragraph */
   .bounce-fade-text {
