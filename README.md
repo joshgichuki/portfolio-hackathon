@@ -39,4 +39,4 @@ Dark/Light Mode
 
 1. Clone the repo:
    ```bash
-   git clone 
+   git clone https://github.com/joshgichuki/portfolio-hackathon.git
