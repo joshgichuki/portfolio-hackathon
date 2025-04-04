@@ -7,7 +7,7 @@ portfolio/
 └── README.md           # This file
 # 🌟 Josh Ndegwa - Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live-green?style=for-the-badge)](https://your-portfolio-link.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-green?style=for-the-badge)](https://https://portfolio-hackathon-tau.vercel.app)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
 A modern responsive portfolio showcasing my work as a Software Engineer and Telecommunications Specialist.
