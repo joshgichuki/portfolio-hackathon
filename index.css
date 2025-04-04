@@ -20,6 +20,10 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 
+h2, span, p {
+  width: 80%; /* Or a smaller percentage */
+  max-width: 800px; /* Example maximum width */
+}
 body {
   background-color: var(--secondary); /* Dark slate background */
   color: #ffffff;
