@@ -141,13 +141,18 @@ nav a.active {
 nav a.active::after {
   width: 80%; /* Fully underline the active link */
 }
+/* Hero Container */
 .hero-container {
   background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white; /* Ensure text is readable */
-  padding-bottom: 1rem; /* Add padding to extend the background */
+  width: 80%; /* Adjust width for responsiveness */
+  margin: 0 auto; /* Center the section */
+  padding: 2rem; /* Adjust padding for spacing */
+  border-radius: 10px; /* Rounded corners similar to education section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 /* Typewriter and Glow Effect */
 .typewriter-glow {
