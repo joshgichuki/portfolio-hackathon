@@ -156,12 +156,12 @@ nav a.active::after {
 }
 /* Typewriter and Glow Effect */
 .typewriter-glow {
-  display: inline-block;
+  display: flex;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fff;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: wrap;
   border-right: 2px solid transparent; /* Placeholder for cursor */
   width: 0;
   animation: typing 3.5s steps(40, end) forwards, infinite alternate 3.5s;
@@ -206,7 +206,7 @@ nav a.active::after {
   /* Bounce and Fade-in Animation for Paragraph */
   .bounce-fade-text {
       font-family: Arial, sans-serif;
-      font-size: 1rem;
+      font-size: 0.5rem;
       color: #fff;
       opacity: 1; /* Fully visible by default */
       transform: translateY(0); /* Default position */
