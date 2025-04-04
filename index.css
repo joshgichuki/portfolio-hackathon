@@ -1,0 +1,712 @@
+:root {
+  --primary: #ff7f50;       /* Primary blue */
+  --primary-dark: #1e40af;  /* Darker blue */
+  --secondary: #1e293b;     /* Dark slate */
+  --accent: #06b6d4;       /* Cyan accent */
+  --light: #f8fafc;        /* Off-white */
+  --dark: #0f172a;         /* Navy */
+  --gray: #64748b;         /* Medium gray */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* GENERAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--secondary); /* Dark slate background */
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* HEADER */
+ /* ===== HEADER & NAVIGATION ===== */
+ header {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space between the profile photo and nav */
+  position: relative; /* Ensure the pseudo-element is positioned relative to the header */
+  z-index: 1; /* Place the header content above the overlay */
+  padding: 1rem 2rem;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: -1; /* Place the overlay behind the header content */
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 2rem;
+  margin-right: 0; /* Remove extra margin */
+}
+
+.profile-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%; /* Keep the circular shape */
+  object-fit: cover; /* Ensure the image fits within the circle */
+  border: none; /* Remove the border */
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem; /* Adjust spacing between nav items */
+  list-style: none;
+  margin-top: auto;
+  padding: 0; /* Remove default padding */
+}
+
+nav a {
+  text-decoration: none;
+  color: white; /* Change text color to white */
+  font-weight: 500;
+  padding: 4rem 4;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline animation */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary); /* Changes text color on hover */
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: var(--primary); /* Same as hover color */
+}
+
+/* Optional: Keep the underline effect for the active link */
+nav a.active::after {
+  width: 100%; /* Fully underline the active link */
+}
+.hero-container {
+  background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white; /* Ensure text is readable */
+  padding-bottom: 2rem; /* Add padding to extend the background */
+}
+/* Typewriter and Glow Effect */
+.typewriter-glow {
+  display: inline-block;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.5rem;
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid transparent; /* Placeholder for cursor */
+      width: 0;
+      animation: typing 3.5s steps(40, end) forwards, infinite alternate 3.5s;
+  }
+
+  .typewriter-text {
+      display: inline-block;
+  }
+
+  .cursor {
+      display: inline-block;
+      animation: blink 0.7s steps(2, start) infinite;
+      color: #00ffcc;
+      font-weight: bold;
+  }
+
+  /* Typing Effect */
+  @keyframes typing {
+      from {
+          width: 0;
+      }
+      to {
+          width: 100%;
+      }
+  }
+
+  /* Blinking Cursor */
+  @keyframes blink {
+      from {
+          opacity: 1;
+      }
+      to {
+          opacity: 0;
+      }
+  }
+
+  /* Bounce and Fade-in Animation for Paragraph */
+  .bounce-fade-text {
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      color: #fff;
+      opacity: 1; /* Fully visible by default */
+      transform: translateY(0); /* Default position */
+      transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+      animation: fadeInBounce 3s ease-in-out forwards; /* Initial animation */
+      margin-bottom: 0px; /* Adjust margin as needed */
+  }
+
+  /* Trigger animations on hover */
+  .bounce-fade-text:hover {
+      animation: fadeInBounce 3s ease-in-out forwards;
+  }
+
+  /* Keyframes for Bounce and Fade-in Animation */
+  @keyframes fadeInBounce {
+      0% {
+          opacity: 0;
+          transform: translateY(20px); /* Start slightly below */
+      }
+      50% {
+          opacity: 0.5;
+          transform: translateY(-10px); /* Bounce upward */
+      }
+      100% {
+          opacity: 1;
+          transform: translateY(0); /* Settle in place */
+      }
+  }
+  /* Add this to create consistent spacing between all sections */
+main section {
+  margin: 3rem 0;
+}
+
+#intro {
+  background: transparent; /* Keep background transparent */
+  color: white; /* Ensure text is readable */
+  height: 60vh; /* Full viewport height */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack heading and paragraph vertically */
+  justify-content: flex-end; /* Align content to the bottom */
+  align-items: flex-start; /* Align content to the left */
+  padding: 2rem; /* Add padding for spacing */
+}
+
+#intro h2, #intro p {
+ /* margin: 0;  Remove default margins */
+  margin-bottom: 0;
+}
+
+#intro p {
+  margin: 1rem; /* Remove default margins */
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  animation:step-start /* Typing animation without cursor */
+  typing 1.5s steps(40, end) forwards, infinite alternate 3.5s;
+  margin-top: 100px; /* Adjust margin to position text */
+}
+/* Education Section */
+#education {
+  width: 80%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: left;
+  position: relative; /* For animation positioning */
+}
+
+#education h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+#education h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+#education p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Animation for Kabarak (from the left) */
+.kabarak {
+  animation: slideInLeft 1s ease-in-out forwards;
+  opacity: 0; /* Initially hidden */
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* End at the original position */
+    opacity: 1;
+  }
+}
+
+/* Animation for PLP (from the right) */
+.plp {
+  animation: slideInRight 1s ease-in-out forwards;
+  opacity: 0; /* Initially hidden */
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%); /* Start off-screen to the right */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* End at the original position */
+    opacity: 1;
+  }
+}
+
+/* ===== CV BUTTON ===== */
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  background: white;
+  color: var(--primary);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.cv-button:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+  
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.bounce-fade-text {
+  opacity: 0;
+  animation: fadeInBounce 2s forwards;
+}
+
+@keyframes fadeInBounce {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* PROJECTS */
+/* ===== PROJECTS SECTION ===== */
+#projects {
+  margin-bottom: 1rem;
+}
+
+
+.projects-container {
+    display: flex; /* Arrange items side by side */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 2rem; /* Add spacing between the boxes */
+    justify-content: center; /* Center the boxes horizontally */
+    margin-top: 2rem; /* Add spacing above the section */
+    margin-bottom: 0.5rem;
+    padding-bottom: 0;
+}
+
+.project-box {
+    background:var(--primary-dark); /* Gradient background */
+    color: white; /* Text color */
+    padding: 1.5rem; /* Add padding inside the box */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    width: 45%; /* Set width for each box */
+    text-align: left; /* Align text to the left */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.project-box:hover {
+    transform: translateY(-10px); /* Slightly lift the box on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.project-box h3 {
+    margin-bottom: 1rem; /* Add spacing below the heading */
+    font-size: 1.8rem; /* Adjust heading size */
+    color: white; /* Use white color for headings */
+}
+
+.project-box a {
+    color: #06b6d4; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+}
+
+.project-box a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.project-year {
+  font-size: 30px; /* Adjust font size */
+  color: var(--accent); /* Use accent color */
+  margin-left: 25rem;
+  margin-top: 0rem; /* Add spacing between the heading and year */
+  font-weight: bold; /* Make the year bold */
+}
+
+@media (max-width: 768px) {
+  .project-box {
+    width: 100%; /* Make project boxes take full width on smaller screens */
+  }
+}
+
+/* INTERESTS */
+/* ===== INTERESTS SECTION ===== */
+#interests {
+  margin-top: 1rem;
+}
+.interests-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center; /* Center the boxes */
+    margin-top: 1rem; /* Add spacing above the section */
+    padding: 1rem; /* Add padding around the section */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    gap: 2rem; /* Add spacing between the boxes */
+}
+
+.interest-box {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    position: relative;
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden; /* Ensure content stays within the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.interest-box:hover {
+    transform: translateY(-10px); /* Slightly lift the box on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.interest-box .front, .interest-box .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px; /* Rounded corners */
+    padding: 15px;
+    transition: transform 0.6s;
+}
+
+.interest-box .front {
+    background: linear-gradient(135deg, #1e40af, #06b6d4); /* Gradient background */
+    color: white;
+}
+
+.interest-box .back {
+    background: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.interest-box:hover .front {
+    transform: rotateY(180deg);
+}
+
+.interest-box:hover .back {
+    transform: rotateY(360deg);
+}
+
+/* ===== SERVICES SECTION ===== */
+.services-container {
+    display: flex; /* Arrange items in a single row */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center; /* Center the boxes */
+    gap: 2rem; /* Add spacing between the boxes */
+    margin-top: 2rem; /* Add spacing above the section */
+    padding: 2rem; /* Add padding around the section */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.service-box {
+    flex: 1 1 200px; /* Allow flexible sizing */
+    max-width: 250px; /* Set a maximum width */
+    text-align: center; /* Center-align the content inside each box */
+    padding: 1.5rem; /* Add padding inside the box */
+    color: white; /* Text color */
+    background: linear-gradient(135deg, #1e40af, #06b6d4); /* Gradient background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.service-box:hover {
+    transform: translateY(-10px); /* Slightly lift the box on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.service-box i {
+    font-size: 3rem; /* Adjust icon size */
+    color: white; /* Use white color for icons */
+    margin-bottom: 1rem; /* Add spacing below the icon */
+}
+
+.service-box h3 {
+    font-size: 1.2rem; /* Adjust heading size */
+    margin: 0; /* Remove unnecessary margins */
+}
+
+
+/* FOOTER */
+footer {
+  background: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+  background-size: cover; /* Ensure the image covers the entire footer */
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  position: relative; /* To position the overlay */
+  height: auto;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Increased opacity for a darker overlay */
+  z-index: 1; /* Place it below the text */
+}
+
+footer * {
+  position: relative; /* Ensure text is above the overlay */
+  z-index: 2;
+}
+
+/* ===== CONTACT INFO ===== */
+.contact-info {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  gap: 0.5rem; /* Space between "Contact Support" and the phone number */
+  font-size: 1rem; /* Match the font size of nav links */
+  font-weight: 500; /* Match the font weight of nav links */
+  text-decoration: none; /* Ensure no underline */
+  margin-left: 5rem; /* Push it to the right if needed */
+}
+
+.contact-info i {
+  font-size: 2.5rem; /* Increase the size of the icon */
+  color: var(--primary); /* Use the primary color for the icon */
+  margin-right: 10px; /* Add spacing between the icon and text */
+  vertical-align: middle; /* Align the icon with the text */
+  float: left; /* Make it appear like a drop cap */
+}
+
+/* ===== FOOTER CONTACT INFO ===== */
+.footer-contact-info {
+  display: flex;
+  flex-direction: row; /* Arrange items horizontally */
+  justify-content: center; /* Center the items horizontally */
+  align-items: flex-start; /* Align items to the top */
+  gap: 15rem; /* Add spacing between items */
+  margin-top: 2rem; /* Add spacing above the section */
+  margin-bottom: 2rem; /* Add spacing below the section */
+  font-size: 1.2rem; /* Adjust text size */
+}
+
+.footer-contact-info div {
+  display: flex;
+  flex-direction: column; /* Stack the icon and text vertically */
+  align-items: center; /* Center-align the icon and text */
+  text-align: center; /* Center-align the text */
+}
+
+.footer-contact-info i {
+  font-size: 4rem; /* Make the icons larger */
+  margin-bottom: 0.5rem; /* Add spacing between the icon and text */
+  color: var(--primary); /* Optional: Use a primary color for the icons */
+}
+@media (max-width: 600px) {
+  .footer-contact-info {
+    flex-direction: column;
+    gap: 1rem; /* Reduce from 15rem */
+  }
+  
+  .interest-box {
+    width: 150px; /* Smaller on mobile */
+    height: 150px;
+  }
+}
+
+/* ===== CONTACT ICONS ===== */
+.contact-icons {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  gap: 2rem; /* Add spacing between the icons */
+}
+
+.contact-icons a {
+  display: flex;
+  flex-direction: column; /* Stack the icon and text vertically */
+  align-items: center; /* Center-align the icon and text */
+  text-decoration: none; /* Remove underline */
+  font-size: 10px; /* Adjust text size */
+  color: inherit; /* Keep the original color of the icons */
+  transition: transform 0.3s ease, color 0.3s ease; /* Add hover effect */
+}
+
+.contact-icons a i {
+  font-size: 20px; /* Adjust icon size */
+  margin-bottom: 0.5rem; /* Add spacing between the icon and text */
+}
+
+.contact-icons a:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  color: var(--primary); /* Optional: Change color on hover */
+}
+.footer-content {
+  margin-top: 50px;
+}
+/* SCROLL TO TOP BUTTON */
+  /* ===== BACK TO TOP BUTTON ===== */
+  #toTopBtn {
+    position: fixed; /* Make it stay in place */
+    bottom: 20px; /* Position it 20px from the bottom */
+    right: 20px; /* Position it 20px from the right */
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: var(--primary); /* Use your primary color */
+    color: white; /* Arrow color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Slightly rounded corners */
+    width: 80px; /* Adjust width */
+    height: 40px; /* Adjust height */
+    display: flex; /* Center the arrow */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* Adjust arrow size */
+    cursor: pointer; /* Change cursor to pointer */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    display: none; /* Initially hide the button */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+#toTopBtn::before {
+    content: '\2191'; /* Single upward arrow */
+    font-size: 1.5rem; /* Adjust arrow size */
+}
+
+#toTopBtn:hover {
+    background-color: var(--accent); /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+#toTopBtn:active {
+    background-color: var(--primary-dark); /* Change color on press */
+}
+
+/* CONTACT FORM STYLING */
+#contact-form {
+  width: 80%; /* Adjust width for responsiveness */
+  margin: 2rem auto; /* Center the form and add spacing */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  padding: 2rem; /* Add padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  color: white; /* Ensure text is readable */
+  text-align: left; /* Align text to the left */
+}
+
+#contact-form h2 {
+  text-align: center; /* Center the heading */
+  font-size: 1.8rem; /* Adjust font size */
+  margin-bottom: 1.5rem; /* Add spacing below the heading */
+  color: var(--accent); /* Use accent color for the heading */
+}
+
+#contact-form label {
+  display: block; /* Ensure labels are on their own line */
+  margin-bottom: 0.5rem; /* Add spacing below labels */
+  font-weight: bold; /* Make labels bold */
+  color: var(--light); /* Use light color for labels */
+}
+
+#contact-form input,
+#contact-form select,
+#contact-form button {
+  width: 100%; /* Full width for inputs and button */
+  padding: 0.8rem; /* Add padding for better usability */
+  margin-bottom: 1rem; /* Add spacing between fields */
+  border: 1px solid var(--gray); /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Adjust font size */
+  background: var(--dark); /* Dark background for inputs */
+  color: var(--light); /* Light text color */
+}
+
+#contact-form input:focus,
+#contact-form select:focus {
+  outline: none; /* Remove default outline */
+  border-color: var(--primary); /* Highlight border on focus */
+  box-shadow: 0 0 5px var(--primary); /* Add subtle glow effect */
+}
+
+#contact-form button {
+  background: var(--primary); /* Primary color for button */
+  color: white; /* White text color */
+  font-weight: bold; /* Make button text bold */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+#contact-form button:hover {
+  background: var(--accent); /* Change background on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3); /* Add shadow on hover */
+}
