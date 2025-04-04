@@ -240,29 +240,28 @@ main section {
 }
 
 /* Intro Section */
+/* Intro Section */
 #intro {
   background: transparent; /* Keep background transparent */
   color: white; /* Ensure text is readable */
-  height: 40vh; /* Full viewport height */
+  height: auto; /* Adjust height to fit content */
   display: flex; /* Use flexbox for alignment */
   flex-direction: column; /* Stack heading and paragraph vertically */
-  justify-content: flex-end; /* Align content to the bottom */
+  justify-content: flex-start; /* Align content to the top */
   align-items: flex-start; /* Align content to the left */
+  width: 80%; /* Adjust width for responsiveness */
+  margin: 0 auto; /* Center the section */
   padding: 2rem; /* Adjust padding for spacing */
-  margin: 0 auto; /* Adjust margin to reduce space between nav and intro */
-  positio: relative;
 }
 
 #intro h2, #intro p {
-  margin-bottom: 0; /* Remove default margins */
+  margin-bottom: 1rem; /* Add margin between elements */
 }
 
 #intro p {
-  margin: 0 auto; /* Adjust margin to reduce space between nav and intro */
   overflow: hidden; /* Hide overflowing text */
   white-space: nowrap; /* Prevent text from wrapping */
   animation: step-start typing 1.5s steps(40, end) forwards, infinite alternate 3.5s;
-  margin-top: 50px; /* Adjust margin to reduce space between nav and intro *
 }
 /* Education Section */
 #education {
