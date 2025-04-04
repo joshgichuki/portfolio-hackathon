@@ -103,7 +103,7 @@ nav a.active::after {
   nav ul {
     flex-direction: column; /* Stack nav items vertically */
     align-items: flex-start; /* Align nav items to the start */
-    width: 100%; /* Full width for nav items */
+    width: 80%; /* Full width for nav items */
   }
 
   nav a {
@@ -139,7 +139,7 @@ nav a.active {
 
 /* Optional: Keep the underline effect for the active link */
 nav a.active::after {
-  width: 100%; /* Fully underline the active link */
+  width: 80%; /* Fully underline the active link */
 }
 .hero-container {
   background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace with your image path */
@@ -147,7 +147,7 @@ nav a.active::after {
   background-position: center;
   background-repeat: no-repeat;
   color: white; /* Ensure text is readable */
-  padding-bottom: 2rem; /* Add padding to extend the background */
+  padding-bottom: 1rem; /* Add padding to extend the background */
 }
 /* Typewriter and Glow Effect */
 .typewriter-glow {
@@ -179,7 +179,7 @@ nav a.active::after {
           width: 0;
       }
       to {
-          width: 100%;
+          width: 80%;
       }
   }
 
@@ -197,7 +197,7 @@ nav a.active::after {
     animation: 
       typing 2.5s steps(40, end) forwards,
       blink 0.7s infinite;
-    width: 100%;
+    width: 80%;
     border-right: none; /* Remove cursor on mobile */
   }
 }
@@ -243,7 +243,7 @@ main section {
 #intro {
   background: transparent; /* Keep background transparent */
   color: white; /* Ensure text is readable */
-  height: 60vh; /* Full viewport height */
+  height: 40vh; /* Full viewport height */
   display: flex; /* Use flexbox for alignment */
   flex-direction: column; /* Stack heading and paragraph vertically */
   justify-content: flex-end; /* Align content to the bottom */
